@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
 <suite name="Plan 2" verbose="1" >
-  <test name="Segundo Test" >
+  <test name="Android Test" >
   	<parameter name="browser" value="ANDROID_CHROME"/>
     <classes>
-       <class name="io.github.jschenfeld.automation.tests.FirstTest" />
+       <class name="io.github.jschenfeld.automation.tests.GoogleSearchTest" />
     </classes>
   </test>
 </suite>

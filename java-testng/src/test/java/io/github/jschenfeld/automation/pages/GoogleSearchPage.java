@@ -4,8 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import io.github.jschenfeld.automation.Page;
-
 public class GoogleSearchPage extends Page {
 
 	@FindBy(name = "q")
@@ -19,8 +17,9 @@ public class GoogleSearchPage extends Page {
 		driver.get("https://google.com.ar");
 	}
 
-	public void buscar(String consulta) {
+	public GoogleResultPage buscar(String consulta) {
 		campoConsulta.sendKeys(consulta, Keys.TAB);
 		botonBuscar.click();
+		return new GoogleResultPage();
 	}
 }

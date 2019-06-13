@@ -8,7 +8,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<defaultSuiteFiles>./planes/plan1.xml</defaultSuiteFiles>
+		<defaultSuiteFiles>plan1.xml</defaultSuiteFiles>
 		<suiteFile>${defaultSuiteFiles}</suiteFile>
 	</properties>
 
@@ -30,7 +30,7 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>${suiteFile}</suiteXmlFile>
+						<suiteXmlFile>./planes/${suiteFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -54,6 +54,12 @@
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>3.4.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

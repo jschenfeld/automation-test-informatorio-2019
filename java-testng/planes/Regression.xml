@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Plan 2" verbose="1" >
+  <test name="Chrome" >
+  	<parameter name="browser" value="CHROME"/>
+    <classes>
+       <class name="io.github.jschenfeld.automation.tests.GoogleSearchTest" />
+       <class name="io.github.jschenfeld.automation.tests.YahooSearchTest" />
+    </classes>
+  </test>
+   <test name="Firefox" >
+  	<parameter name="browser" value="FIREFOX"/>
+    <classes>
+       <class name="io.github.jschenfeld.automation.tests.GoogleSearchTest" />
+       <class name="io.github.jschenfeld.automation.tests.YahooSearchTest" />
+    </classes>
+  </test>
+   <test name="Servicios" >
+  	<parameter name="browser" value="FIREFOX"/>
+    <classes>
+       <class name="io.github.jschenfeld.automation.tests.ProductTest" />
+    </classes>
+  </test>
+</suite>
