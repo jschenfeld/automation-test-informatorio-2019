@@ -2,10 +2,10 @@
 .metadata
 bin/
 tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
+tmp
+.bak
+.swp
+.nib
 local.properties
 .settings/
 .sonarlint
@@ -15,7 +15,7 @@ RemoteSystemsTempFiles
 
 ### Eclipse Patch ###
 # Eclipse Core
-.project
+*/.project
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
@@ -56,13 +56,13 @@ hs_err_pid*
 .nfs*
 
 ### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+*/target/
+*/pom.xml.tag
+*/pom.xml.releaseBackup
+*/pom.xml.versionsBackup
+*/pom.xml.next
+*/release.properties
+*/dependency-reduced-pom.xml
+*/buildNumber.properties
+*/.mvn/timing.properties
+*/.mvn/wrapper/maven-wrapper.jar
