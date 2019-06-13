@@ -11,7 +11,7 @@ import io.github.jschenfeld.automation.pages.WikiArticlePage;
 public class GoogleSearchTest extends Base {
 
 	@Test
-	public void first(){
+	public void buscarResistenciaConGoogle(){
 		GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 		GoogleResultPage googleResultPage = googleSearchPage.buscar("Resistencia ciudad wiki");
 		WikiArticlePage wikiArticlePage = googleResultPage.clickFirstResult(WikiArticlePage.class);
