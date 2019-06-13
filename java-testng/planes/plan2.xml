@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Plan 2" verbose="1" >
+  <test name="Segundo Test" >
+  	<parameter name="browser" value="CHROME"/>
+    <classes>
+       <class name="io.github.jschenfeld.automation.tests.FirstTest" />
+    </classes>
+  </test>
+</suite>
