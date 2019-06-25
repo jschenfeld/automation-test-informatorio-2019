@@ -12,6 +12,9 @@ local.properties
 .loadpath
 .recommenders
 RemoteSystemsTempFiles
+ 
+### Intellij
+.idea
 
 ### Eclipse Patch ###
 # Eclipse Core
