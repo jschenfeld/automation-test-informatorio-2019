@@ -13,6 +13,9 @@ local.properties
 .recommenders
 RemoteSystemsTempFiles
 
+##Intellij
+.idea
+
 ### Eclipse Patch ###
 # Eclipse Core
 */.project
