@@ -1,4 +1,4 @@
-package io.github.jschenfeld.model;
+package io.github.jschenfeld.exercise1.model;
 
 public abstract class Persona {
 
