@@ -69,3 +69,7 @@ hs_err_pid*
 */buildNumber.properties
 */.mvn/timing.properties
 */.mvn/wrapper/maven-wrapper.jar
+
+
+### TestNG ###
+*/test-output
