@@ -1,10 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
-<suite name="Plan" verbose="1" >
-  <test name="Primer Test" >
-    <parameter name="browser" value="FIREFOX"/>
+<suite name="Plan 1" verbose="1" >
+  <test name="Verificacion del Registro de Clientes" >
     <classes>
-       <class name="io.github.jschenfeld.automation.tests.FirstTest" />
+       <class name="io.github.jschenfeld.automation.exercise1.RegistroClientesTest" />
     </classes>
   </test>
 </suite>

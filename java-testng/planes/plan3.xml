@@ -1,10 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
-<suite name="Plan 2" verbose="1" >
-  <test name="Segundo Test" >
-  	<parameter name="browser" value="ANDROID_CHROME"/>
-    <classes>
-       <class name="io.github.jschenfeld.automation.tests.FirstTest" />
-    </classes>
+<suite name="Plan 3" verbose="1" >
+  <test name="Verificacion del Registro de Clientes" >
+    <packages>
+       <package name="io.github.jschenfeld.automation.exercise1" />
+    </packages>
   </test>
 </suite>

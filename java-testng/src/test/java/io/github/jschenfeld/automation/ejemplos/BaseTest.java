@@ -11,16 +11,16 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-	@BeforeTest(alwaysRun = true)
-	public void beforeTest() {
-		System.out.println();
-		System.out.println("beforeTest");
-	}
-
 	@BeforeSuite(alwaysRun = true)
 	public void beforeSuite() {
 		System.out.println();
 		System.out.println("beforeSuite");
+	}
+	
+	@BeforeTest(alwaysRun = true)
+	public void beforeTest() {
+		System.out.println();
+		System.out.println("beforeTest");
 	}
 
 	@BeforeClass(alwaysRun = true)

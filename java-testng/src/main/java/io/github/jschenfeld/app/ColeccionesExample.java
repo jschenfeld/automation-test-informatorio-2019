@@ -10,8 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import bsh.ParseException;
-
 public class ColeccionesExample {
 
 	public static void main(String[] args) {

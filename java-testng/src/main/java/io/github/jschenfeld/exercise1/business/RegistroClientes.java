@@ -10,7 +10,7 @@ import io.github.jschenfeld.exercise1.utils.FileUtils;
 
 public class RegistroClientes {
 
-	private static List<Cliente> clientes = new ArrayList<>();
+	private List<Cliente> clientes = new ArrayList<>();
 	private static final String DATABASE = "clientes.csv";
 	
 	public RegistroClientes() {

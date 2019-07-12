@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Plan 4" verbose="1">
+	<test name="Ejecutando los test que tienen el grupo informatorio">
+		<groups>
+			<run>
+				<include name="informatorio" />
+			</run>
+		</groups>
+		<packages>
+			<package name="io.github.jschenfeld.automation.exercise1" />
+		</packages>
+	</test>
+</suite>

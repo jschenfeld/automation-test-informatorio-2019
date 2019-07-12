@@ -1,10 +1,26 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-  
-<suite name="Plan 2" verbose="1" >
-  <test name="Segundo Test" >
-  	<parameter name="browser" value="CHROME"/>
-    <classes>
-       <class name="io.github.jschenfeld.automation.tests.FirstTest" />
-    </classes>
-  </test>
+
+<suite name="Plan 2" verbose="1">
+	<test name="Verificar la creacion de nuevos clientes">
+		<classes>
+			<class
+				name="io.github.jschenfeld.automation.exercise1.RegistroClientesTest">
+				<methods>
+					<exclude name="eliminarClientesTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verificar la eliminacion de clientes">
+		<classes>
+			<class
+				name="io.github.jschenfeld.automation.exercise1.RegistroClientesTest">
+				<methods>
+					<parameter name="dni" value="2" />
+					<include name="eliminarClientesTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
