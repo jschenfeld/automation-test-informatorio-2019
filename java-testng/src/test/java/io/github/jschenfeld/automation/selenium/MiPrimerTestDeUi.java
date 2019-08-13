@@ -19,6 +19,8 @@ public class MiPrimerTestDeUi {
 
 	@BeforeMethod
 	public void inicializarBrowser() {
+//		System.setProperty("webdriver.chrome.driver", 
+//				"/home/jonatan.schenfeld/.m2/repository/webdriver/chromedriver/linux64/76.0.3809.68/chromedriver");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 //		WebDriverManager.firefoxdriver().setup();
@@ -32,7 +34,7 @@ public class MiPrimerTestDeUi {
 		GoogleBusquedaPageObject googleBusquedaPage = new GoogleBusquedaPageObject(driver);
 		googleBusquedaPage.ingresarBusqueda("Informatorio Chaco");
 		googleBusquedaPage.clickBotonBuscar();
-
+		
 		System.out.println(driver.getCurrentUrl());
 	}
 

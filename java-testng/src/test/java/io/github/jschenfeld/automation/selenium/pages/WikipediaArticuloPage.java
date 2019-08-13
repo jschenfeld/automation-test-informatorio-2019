@@ -5,16 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GoogleResultadosPageFactory {
+public class WikipediaArticuloPage {
 
-	@FindBy(xpath = "//a//*[text()='Informatorio - Polo IT Chaco']")
-	private WebElement poloItlink;
+	@FindBy(id = "firstHeading")
+	private WebElement primerTitulo;
 	
-	public GoogleResultadosPageFactory(WebDriver driver) {
+	public WikipediaArticuloPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void abrirLaPaginaDelPoloIt() {
-		poloItlink.click();
+	public String obtenerTituloTexto() {
+		return primerTitulo.getText();
 	}
 }
