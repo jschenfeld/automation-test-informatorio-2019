@@ -1,4 +1,4 @@
-package io.github.jschenfeld.automation.selenium.pages;
+package io.github.jschenfeld.automation.selenium.pages.theinternet;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.github.jschenfeld.automation.selenium.utils.SeleniumUtils;
 
-public class TheInternetDynamicPage {
+public class TiDynamicPage {
 
 	private WebDriver driver;
 	
@@ -20,7 +20,7 @@ public class TheInternetDynamicPage {
 	@FindBy(xpath = "//*[@id='finish']/h4")
 	private WebElement message;
 	
-	public TheInternetDynamicPage(WebDriver driver) {
+	public TiDynamicPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}

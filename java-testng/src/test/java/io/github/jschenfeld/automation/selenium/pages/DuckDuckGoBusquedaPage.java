@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import io.github.jschenfeld.automation.selenium.utils.SeleniumUtils;
+
 public class DuckDuckGoBusquedaPage {
 	
 	@FindBy(id = "search_form_input_homepage")
@@ -15,6 +17,7 @@ public class DuckDuckGoBusquedaPage {
 	
 	public DuckDuckGoBusquedaPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		SeleniumUtils.esperarVisibilidadDelElemento(driver, campoDeBusqueda);
 	}
 
 	public void ingresarBusqueda(String consulta) {
