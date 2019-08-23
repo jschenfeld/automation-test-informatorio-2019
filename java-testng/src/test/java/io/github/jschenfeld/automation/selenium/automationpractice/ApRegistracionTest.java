@@ -4,7 +4,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import io.github.jschenfeld.automation.AbstractUiTest;
+import io.github.jschenfeld.automation.selenium.AbstractUiTest;
 import io.github.jschenfeld.automation.selenium.pages.automationpractice.ApAuthentication;
 
 public class ApRegistracionTest extends AbstractUiTest {

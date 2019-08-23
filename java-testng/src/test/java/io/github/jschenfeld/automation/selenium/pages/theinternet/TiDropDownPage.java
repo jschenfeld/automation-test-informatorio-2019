@@ -22,7 +22,7 @@ public class TiDropDownPage extends AbstractPage {
 	}
 	
 
-	public String getSelectedOption() {
+	public String getTextOfSelectedOption() {
 		Select select = new Select(dropdown);
 		return select.getFirstSelectedOption().getText();
 	}

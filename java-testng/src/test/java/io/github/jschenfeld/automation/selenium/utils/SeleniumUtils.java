@@ -2,6 +2,8 @@ package io.github.jschenfeld.automation.selenium.utils;
 
 
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -32,5 +34,28 @@ public class SeleniumUtils {
 				.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
+	
+	public static void switchToWindows(WebDriver driver) {
+		String actualWindows = driver.getWindowHandle();
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> iterator = handles.iterator();
+		if(iterator.hasNext()) {
+			String hash = iterator.next();
+			if(actualWindows.equals(hash) && iterator.hasNext()) {
+				hash = iterator.next();
+			}
+			driver.switchTo().window(hash);
+		}
+	}
+	
+	protected static void switchToLastWindows(WebDriver driver) {
+		String actualWindow = driver.getWindowHandle();
+		Set<String> handles = driver.getWindowHandles();
+		for (String string : handles) {
+			if (!string.equals(actualWindow)) {
+				driver.switchTo().window(string);
+			}
+		}
+	}
 	
 }

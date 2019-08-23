@@ -1,4 +1,4 @@
-package io.github.jschenfeld.automation;
+package io.github.jschenfeld.automation.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
