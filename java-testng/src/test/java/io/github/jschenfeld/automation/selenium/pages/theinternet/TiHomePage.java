@@ -10,6 +10,9 @@ public class TiHomePage extends AbstractPage {
 	
 	@FindBy(linkText = "Dropdown")
 	private WebElement dropdown;
+	
+	@FindBy(linkText = "Multiple Windows")
+	private WebElement multipleWindows;
 
 	public TiHomePage(WebDriver driver) {
 		super(driver);
@@ -18,5 +21,10 @@ public class TiHomePage extends AbstractPage {
 	public TiDropDownPage clickDropDownLink() {
 		dropdown.click();
 		return new TiDropDownPage(driver);
+	}
+
+	public TiMultipleWindows clickMultipleWindows() {
+		multipleWindows.click();
+		return new TiMultipleWindows(driver);
 	}
 }

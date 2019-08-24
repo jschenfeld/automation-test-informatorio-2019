@@ -48,7 +48,7 @@ public class SeleniumUtils {
 		}
 	}
 	
-	protected static void switchToLastWindows(WebDriver driver) {
+	public static void switchToLastWindows(WebDriver driver) {
 		String actualWindow = driver.getWindowHandle();
 		Set<String> handles = driver.getWindowHandles();
 		for (String string : handles) {
@@ -56,6 +56,12 @@ public class SeleniumUtils {
 				driver.switchTo().window(string);
 			}
 		}
+	}
+	
+	public static void switchToWindow(WebDriver driver, int index) {
+		Object[] allWindows = driver.getWindowHandles().toArray();
+		driver.switchTo().window(allWindows[index].toString());
+		
 	}
 	
 }
