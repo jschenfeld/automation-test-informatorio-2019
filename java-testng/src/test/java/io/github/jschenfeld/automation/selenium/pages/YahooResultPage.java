@@ -17,7 +17,7 @@ public class YahooResultPage extends AbstractPage {
 	
 	public WikipediaArticuloPage clickFirstResult() {
 		firstResult.click();
-		SeleniumUtils.switchToWindows(driver);
+		SeleniumUtils.switchToWindow(driver);
 		return new WikipediaArticuloPage(driver);
 	}
 }
