@@ -17,7 +17,7 @@ public class SeleniumUtils {
 
 	
 	public static boolean esperarVisibilidadDelElemento(WebDriver driver, WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		return wait
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class)
@@ -26,13 +26,24 @@ public class SeleniumUtils {
 	}
 	
 	public static WebElement esperarVisibilidadDelElemento(WebDriver driver, By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		return wait
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class)
 				.pollingEvery(Duration.ofMillis(200L))
 				.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
+	
+	public static boolean esperarNuevaVentana(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		return wait
+				.ignoring(StaleElementReferenceException.class)
+				.ignoring(NoSuchElementException.class)
+				.pollingEvery(Duration.ofMillis(200L))
+				.until(ExpectedConditions.numberOfWindowsToBe(2)) != null;
+	}
+	
+	
 	
 	
 	public static void switchToWindow(WebDriver driver) {
