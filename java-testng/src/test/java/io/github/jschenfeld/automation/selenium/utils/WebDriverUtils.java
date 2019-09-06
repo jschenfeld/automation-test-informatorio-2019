@@ -1,5 +1,6 @@
 package io.github.jschenfeld.automation.selenium.utils;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.Platform;
@@ -12,8 +13,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverUtils {
-	
-	public enum Driver{
+
+	public enum Driver {
 		CHROME {
 			@Override
 			public WebDriver build() {
@@ -33,21 +34,31 @@ public class WebDriverUtils {
 			public WebDriver build() {
 				DesiredCapabilities caps = DesiredCapabilities.chrome();
 				caps.setPlatform(Platform.LINUX);
-				URL url = null;
-				return new RemoteWebDriver(url, caps);
+				caps.setBrowserName("chrome");
+				return new RemoteWebDriver(getHubUrl(), caps);
 			}
 		},
-		REMOTE_CHROME_ANDROID {
+		REMOTE_FIREFOX_LINUX {
 			@Override
 			public WebDriver build() {
 				DesiredCapabilities caps = DesiredCapabilities.chrome();
-				caps.setPlatform(Platform.ANDROID);
-				URL url = null;
-				return new RemoteWebDriver(url, caps);
+				caps.setPlatform(Platform.LINUX);
+				caps.setBrowserName("firefox");
+				return new RemoteWebDriver(getHubUrl(), caps);
 			}
 		};
-		
+
 		public abstract WebDriver build();
+	}
+
+	public static URL getHubUrl() {
+		URL url = null;
+		try {
+			url = new URL("http://localhost:4444/wd/hub");
+		} catch (MalformedURLException e) {
+			throw new RuntimeException(e);
+		}
+		return url;
 	}
 
 }
