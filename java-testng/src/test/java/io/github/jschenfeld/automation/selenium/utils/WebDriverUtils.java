@@ -35,15 +35,16 @@ public class WebDriverUtils {
 		REMOTE_CHROME_LINUX {
 			@Override
 			public WebDriver build() {
+				System.out.println("Chrome");
 				DesiredCapabilities caps = DesiredCapabilities.chrome();
 				caps.setPlatform(Platform.LINUX);
-				caps.setBrowserName("chrome");
 				return new RemoteWebDriver(getHubUrl(), caps);
 			}
 		},
 		REMOTE_CHROME_MOBILE_LINUX {
 			@Override
 			public WebDriver build() {
+				System.out.println("Chrome Mobile");
 				Map<String, String> mobileEmulation = new HashMap<>();
 				mobileEmulation.put("deviceName", "iPhone X");
 				
@@ -52,7 +53,6 @@ public class WebDriverUtils {
 
 				DesiredCapabilities caps = DesiredCapabilities.chrome();
 				caps.setPlatform(Platform.LINUX);
-				caps.setBrowserName("chrome");
 				caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 				return new RemoteWebDriver(getHubUrl(), caps);
 			}
@@ -60,9 +60,9 @@ public class WebDriverUtils {
 		REMOTE_FIREFOX_LINUX {
 			@Override
 			public WebDriver build() {
-				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				System.out.println("Firefox");
+				DesiredCapabilities caps = DesiredCapabilities.firefox();
 				caps.setPlatform(Platform.LINUX);
-				caps.setBrowserName("firefox");
 				return new RemoteWebDriver(getHubUrl(), caps);
 			}
 		};
