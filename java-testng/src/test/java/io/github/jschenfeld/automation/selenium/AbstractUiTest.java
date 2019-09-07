@@ -14,7 +14,7 @@ public abstract class AbstractUiTest {
 
 	@BeforeMethod
 	@Parameters(value = "browser")
-	public void inicializarBrowser(@Optional(value = "REMOTE_CHROME_LINUX") String browser) {
+	public void inicializarBrowser(@Optional(value = "REMOTE_CHROME_MOBILE_LINUX") String browser) {
 		
 		driver = Driver.valueOf(browser).build();
 		driver.get(getBaseUrl());
