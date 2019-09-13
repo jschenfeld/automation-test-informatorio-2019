@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
-<suite name="Plan 1" verbose="1" parallel="methods" thread-count="1">
+<suite name="Plan 1" verbose="1" >
   
   <test name="Jugando con Iframes en Chrome">
 	<parameter name="browser" value="REMOTE_CHROME_LINUX" />
@@ -15,11 +15,5 @@
        <class name="io.github.jschenfeld.automation.selenium.ToolQaTest" />
     </classes>
   </test>
-  
-  <test name="Jugando con Iframes en Chrome Mobile">
-	<parameter name="browser" value="REMOTE_CHROME_MOBILE_LINUX" />
-	<classes>
-       <class name="io.github.jschenfeld.automation.selenium.ToolQaTest" />
-    </classes>
-  </test>
+
 </suite>
