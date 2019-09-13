@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import emanuelRuidiaz.persona.Persona;
+import emanuelRuidiaz.seleniumUtils.SeleniumUtils;
 
 public class RegisterUserPage extends AbstractPage {
 
@@ -12,6 +13,9 @@ public class RegisterUserPage extends AbstractPage {
 		super(driver);
 	}
 	
+	@FindBy(css = "a[class = 'login']")
+	private WebElement signInButton;
+
 	@FindBy(id = "email_create")
 	private WebElement email_create;
 	
@@ -19,6 +23,8 @@ public class RegisterUserPage extends AbstractPage {
 	private WebElement buttonSubmit;
 	
 	public void stepOne(Persona persona) {
+		signInButton.click();
+		SeleniumUtils.waitDinamico(driver, email_create);
 		email_create.sendKeys(persona.getEmail());
 		buttonSubmit.click();
 	}

@@ -11,7 +11,7 @@ public class ErrorMessageRegisterTest extends AbstractTest {
 
 	@Override
 	protected String getBaseUrl() {
-		return "http://automationpractice.com/index.php?controller=authentication&back=my-account";
+		return "http://automationpractice.com/index.php";
 	}
 	
 	@Test
