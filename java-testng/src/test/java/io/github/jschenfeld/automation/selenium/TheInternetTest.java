@@ -31,7 +31,7 @@ public class TheInternetTest extends AbstractUiTest {
 		dropDownPage.selectByIndex(option);
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void testMultipleWindows() {
 		TiHomePage homePage = new TiHomePage(getDriver());
 		TiMultipleWindows tiMultipleWindows = homePage.clickMultipleWindows();
