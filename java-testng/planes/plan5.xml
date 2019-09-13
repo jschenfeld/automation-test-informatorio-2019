@@ -12,7 +12,7 @@
   <test name="Jugando con DropDown en Firefox">
 	<parameter name="browser" value="REMOTE_FIREFOX_LINUX" />
 	<classes>
-       <class name="io.github.jschenfeld.automation.selenium.ToolQaTest" />
+       <class name="io.github.jschenfeld.automation.selenium.TheInternetTest" />
     </classes>
   </test>
 
