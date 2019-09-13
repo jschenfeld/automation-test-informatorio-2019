@@ -33,6 +33,7 @@ public class SignInTest extends AbstractTest {
 		page.signIn(persona);	
 		String name = persona.getFirstName() + " " + persona.getLastName();
 		Assert.assertEquals(name, page.getSessionUser().getText());
+		System.out.println(" SignInTest(successfully) - PASSED");
 	}
 	
 	@DataProvider(name = "usuarioWrong")
@@ -53,6 +54,8 @@ public class SignInTest extends AbstractTest {
 		String errorMessage = page.getError_message().getText();
 		
 		assertEquals(errorMessage, "There is 1 error");
+		
+		System.out.println(" SignInTest(denied) - PASSED");
 	}
 
 }

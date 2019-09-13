@@ -52,10 +52,9 @@ public class RegisterUserTest extends AbstractTest {
 		
 		String name = persona.getFirstName() + " " + persona.getLastName();
 		
-		System.out.println("name: " + name);
-		System.out.println("name WebElement: " + page.getSessionUser().getText());
-		
 		Assert.assertEquals(name, page.getSessionUser().getText());
+		
+		System.out.println(" Register User Test - PASSED");
 		
 	}
 

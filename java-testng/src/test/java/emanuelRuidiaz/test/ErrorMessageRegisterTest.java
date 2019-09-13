@@ -21,6 +21,7 @@ public class ErrorMessageRegisterTest extends AbstractTest {
 		SeleniumUtils.waitDinamico(getDriver(), page.getErrorMessage());
 		String errorMessage = page.getErrorMessage().getText();
 		assertEquals(errorMessage, "Invalid email address.");
+		System.out.println(" Error message Register Test - PASSED");
 	}
 	
 
