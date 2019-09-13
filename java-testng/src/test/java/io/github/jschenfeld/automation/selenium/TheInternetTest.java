@@ -16,7 +16,7 @@ public class TheInternetTest extends AbstractUiTest {
 		return "http://the-internet.herokuapp.com";
 	}
 
-	@Test(dataProvider = "dpDropdown", enabled= false)
+	@Test(dataProvider = "dpDropdown")
 	public void testDropdown(String option) {
 		TiHomePage homePage = new TiHomePage(getDriver());
 		TiDropDownPage dropDownPage = homePage.clickDropDownLink();
@@ -24,7 +24,7 @@ public class TheInternetTest extends AbstractUiTest {
 		Assert.assertEquals(dropDownPage.getTextOfSelectedOption(), option);
 	}
 	
-	@Test(dataProvider = "dpDropdownIndex", enabled= false)
+	@Test(dataProvider = "dpDropdownIndex")
 	public void testDropdownByIndex(int option) {
 		TiHomePage homePage = new TiHomePage(getDriver());
 		TiDropDownPage dropDownPage = homePage.clickDropDownLink();

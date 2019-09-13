@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Plan 5" verbose="1" >
+  
+  <test name="Jugando con DropDown en Chrome">
+	<parameter name="browser" value="REMOTE_CHROME_LINUX" />
+	<classes>
+       <class name="io.github.jschenfeld.automation.selenium.TheInternetTest" />
+    </classes>
+  </test>
+  
+  <test name="Jugando con DropDown en Firefox">
+	<parameter name="browser" value="REMOTE_FIREFOX_LINUX" />
+	<classes>
+       <class name="io.github.jschenfeld.automation.selenium.ToolQaTest" />
+    </classes>
+  </test>
+
+</suite>
