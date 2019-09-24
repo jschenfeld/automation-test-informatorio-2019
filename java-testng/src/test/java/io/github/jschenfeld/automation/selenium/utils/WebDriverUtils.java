@@ -25,6 +25,19 @@ public class WebDriverUtils {
 				return new ChromeDriver();
 			}
 		},
+		CHROME_MOBILE {
+			@Override
+			public WebDriver build() {
+				WebDriverManager.chromedriver().setup();
+				System.out.println("Remote Chrome Mobile");
+				Map<String, String> mobileEmulation = new HashMap<>();
+				mobileEmulation.put("deviceName", "iPhone X");
+				
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+				return new ChromeDriver(chromeOptions);
+			}
+		},
 		FIREFOX {
 			@Override
 			public WebDriver build() {
@@ -44,7 +57,7 @@ public class WebDriverUtils {
 		REMOTE_CHROME_MOBILE_LINUX {
 			@Override
 			public WebDriver build() {
-				System.out.println("Chrome Mobile");
+				System.out.println("Remote Chrome Mobile");
 				Map<String, String> mobileEmulation = new HashMap<>();
 				mobileEmulation.put("deviceName", "iPhone X");
 				
@@ -65,15 +78,55 @@ public class WebDriverUtils {
 				caps.setPlatform(Platform.LINUX);
 				return new RemoteWebDriver(getHubUrl(), caps);
 			}
+		},
+		REMOTE_CHROME_WINDOWS {
+			@Override
+			public WebDriver build() {
+				System.out.println("Chrome");
+				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				caps.setPlatform(Platform.WINDOWS);
+				return new RemoteWebDriver(getHubUrl(), caps);
+			}
+		},
+		REMOTE_CHROME_MOBILE_WINDOWS {
+			@Override
+			public WebDriver build() {
+				System.out.println("Remote Chrome Mobile");
+				Map<String, String> mobileEmulation = new HashMap<>();
+				mobileEmulation.put("deviceName", "iPhone X");
+				
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+
+				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				caps.setPlatform(Platform.WINDOWS);
+				caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				return new RemoteWebDriver(getHubUrl(), caps);
+			}
+		},
+		REMOTE_FIREFOX_WINDOWS {
+			@Override
+			public WebDriver build() {
+				System.out.println("Firefox");
+				DesiredCapabilities caps = DesiredCapabilities.firefox();
+				caps.setPlatform(Platform.WINDOWS);
+				return new RemoteWebDriver(getHubUrl(), caps);
+			}
 		};
 
 		public abstract WebDriver build();
 	}
 
 	public static URL getHubUrl() {
+		String hubUrl = System.getProperty("hubUrl");
+		if(hubUrl.isEmpty()) {
+			hubUrl = "http://localhost:4444/wd/hub";
+		}
+		
 		URL url = null;
 		try {
-			url = new URL("http://localhost:4444/wd/hub");
+			System.out.println("HUB_URL: " + hubUrl);
+			url = new URL(hubUrl);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
