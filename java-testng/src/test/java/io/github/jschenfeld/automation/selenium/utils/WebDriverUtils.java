@@ -104,6 +104,24 @@ public class WebDriverUtils {
 				return new RemoteWebDriver(getHubUrl(), caps);
 			}
 		},
+		REMOTE_CHROME_MOBILE_ANDROID {
+			@Override
+			public WebDriver build() {
+				System.out.println("Remote Chrome Mobile");
+//				Map<String, String> mobileEmulation = new HashMap<>();
+//				mobileEmulation.put("deviceName", "iPhone X");
+//				
+//				ChromeOptions chromeOptions = new ChromeOptions();
+
+				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				caps.setPlatform(Platform.ANDROID);
+				caps.setCapability("platformName", Platform.ANDROID);
+				caps.setCapability("deviceName", "Galaxy Tab A (2016)");
+
+//				caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				return new RemoteWebDriver(getHubUrl(), caps);
+			}
+		},
 		REMOTE_FIREFOX_WINDOWS {
 			@Override
 			public WebDriver build() {
@@ -119,7 +137,7 @@ public class WebDriverUtils {
 
 	public static URL getHubUrl() {
 		String hubUrl = System.getProperty("hubUrl");
-		if(hubUrl.isEmpty()) {
+		if(null == hubUrl || hubUrl.isEmpty()) {
 			hubUrl = "http://localhost:4444/wd/hub";
 		}
 		

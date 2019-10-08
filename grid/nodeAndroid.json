@@ -5,16 +5,16 @@
       "browserName": "chrome",
       "maxInstances": 1,
       "platformName":"android",
-      "deviceName": "Galaxy J7 Prime"
-
+      "deviceName": "Galaxy Tab A (2016)",
+      "webdriver.chrome.driver": "/home/jonatan.schenfeld/projects/automation-test-informatorio-2019/grid/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver_64"
     }
   ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
   "registerCycle": 2000,
   "nodePolling": 5000,
-  "host": "192.168.43.94", 
+  "host": "192.168.0.113",
   "maxSession": 1,
   "register": true,
   "hubPort": 4444,
-  "hubHost": "192.168.43.94"
+  "hubHost": "192.168.0.113"
 }
