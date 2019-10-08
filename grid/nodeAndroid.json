@@ -5,8 +5,7 @@
       "browserName": "chrome",
       "maxInstances": 1,
       "platformName":"android",
-      "deviceName": "Galaxy Tab A (2016)",
-      "webdriver.chrome.driver": "/home/jonatan.schenfeld/projects/automation-test-informatorio-2019/grid/node_modules/appium/node_modules/appium-chromedriver/chromedriver/linux/chromedriver_64"
+      "deviceName": "Galaxy Tab A (2016)"
     }
   ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
