@@ -32,6 +32,9 @@ public class AutomationPracticeHome {
 	@FindBy(id = "id_gender1")
 	private WebElement radioBotton;
 	
+	@FindBy(xpath = "//h1")
+	private WebElement createAccountText;
+	
 	
 	@FindBy(id = "create_account_error")
 	private WebElement wrongFormat;
@@ -48,36 +51,62 @@ public class AutomationPracticeHome {
 		
 	}
 	
-	public void enterMail(String mail) {
+	public AutomationPracticeHome enterMail(String mail) {
 		inputEmail.sendKeys(mail);
+		return this;
 	}
 	
-	public void clickCreateAccount() {
+	public AutomationPracticeSingUp clickCreateAccount() {
 		createAccount.click();		
-		SeleniumUtils.waitElementVisibility(driver, radioBotton);
+		SeleniumUtils.waitElementVisibility(driver, radioBotton); 
+		return new AutomationPracticeSingUp(driver);
 	}
 	
-	public void checkMailFormat() {
+	public String assertCreateAccount() {
+		SeleniumUtils.waitElementVisibility(driver, radioBotton);
+		return createAccountText.getText();
+	}
+	
+	public AutomationPracticeHome checkMailFormat() {
 		createAccount.click();		
 		SeleniumUtils.waitElementVisibility(driver, wrongFormat);
+		return this;
 	}
 	
-	public void emailLogIn(String email){
+	public String wrongFormat() {
+		return wrongFormat.getText();
+	}
+	
+	public AutomationPracticeHome emailLogIn(String email){
 		emailLogIn.sendKeys(email);
+		return this;
 	}
 	
-	public void passwordLogIn(String password) {
+	public AutomationPracticeHome passwordLogIn(String password) {
 		passwordLogIn.sendKeys(password);
+		return this;
 	}
 	
-	public void logInFail() {
+	public AutomationPracticeHome logInFail() {
 		logInButton.click();
 		SeleniumUtils.waitElementVisibility(driver, logInFail);
+		return this;
 	}
 	
-	public void logInPass() {
+	public String assertLogInFail() {		
+		SeleniumUtils.waitElementVisibility(driver, logInFail);
+		return logInFail.getText();
+	}
+	
+	public AutomationPracticeHome logInPass() {
 		logInButton.click();
 		SeleniumUtils.waitElementVisibility(driver, logInConfirm);
+		return this;
+	}
+	
+	public String assertLogInPass() {		
+		SeleniumUtils.waitElementVisibility(driver, logInConfirm);
+		return logInConfirm.getText();
 	}
 	
 }

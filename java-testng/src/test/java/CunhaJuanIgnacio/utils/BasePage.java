@@ -14,7 +14,7 @@ public abstract class BasePage {
 	
 	@BeforeMethod(alwaysRun = true)
 	@Parameters(value = "browser")
-	public void inicializarBrowser(@Optional(value = "FIREFOX") String browser) {
+	public void inicializarBrowser(@Optional(value = "CHROME") String browser) {
 		System.out.println("browser " + browser);
 		driver = Driver.valueOf(browser).build();
 		driver.get(getBaseUrl());

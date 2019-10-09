@@ -1,10 +1,11 @@
 package CunhaJuanIgnacio.pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import CunhaJuanIgnacio.utils.SeleniumUtils;
 
@@ -33,6 +34,20 @@ public class AutomationPracticeSingUp {
 	
 	@FindBy(id = "passwd")
 	private WebElement password;
+	
+	//-----------
+	@FindBy(id = "days")
+	private WebElement dayWebElement;
+	
+	@FindBy(id = "months")
+	private WebElement monthWebElement;
+	
+	@FindBy(id = "years")
+	private WebElement yearWebElement;
+	
+	@FindBy(id= "id_state")
+	private WebElement stateWebElement;
+	//-----------
 	
 	@FindBy(id = "company")
 	private WebElement company;
@@ -74,24 +89,28 @@ public class AutomationPracticeSingUp {
 	
 	//SingUp methods
 	
-	public void pickGender(String gender) {
-		if(gender == "male") {
+	public AutomationPracticeSingUp pickGender(String gender) {		
+		if(gender.equals("male")) {
 			genderMale.click();			
-		}else if(gender == "female"){
+		}else if(gender.equals("female")){
 			genderFemale.click();			
 		}
+		return this;
 	}	
 	
-	public void enterFirstName(String name) {
+	public AutomationPracticeSingUp enterFirstName(String name) {
 		firstName.sendKeys(name);
+		return this;
 	}
 	
-	public void enterLastName(String lastName) {
+	public AutomationPracticeSingUp enterLastName(String lastName) {
 		this.lastName.sendKeys(lastName);
+		return this;
 	}
 	
-	public void enterPass(String pass) {
+	public AutomationPracticeSingUp enterPass(String pass) {
 		password.sendKeys(pass);
+		return this;
 	}
 	
 	
@@ -101,68 +120,85 @@ public class AutomationPracticeSingUp {
 	 * @param month
 	 * @param year
 	 */
-	public void enterBirthDay(Integer day,Integer month, Integer year){
-		WebElement enterDay = driver.findElement(By.xpath("//select[@id='days']/option["+(day+1)+"]"));
-		enterDay.click();
+	public AutomationPracticeSingUp enterBirthDay(Integer day,Integer month, Integer year){	
 		
-		WebElement enterMonth = driver.findElement(By.xpath("//select[@id='months']/option["+(month+1)+"]"));
-		enterMonth.click();
+		Select daySelect = new Select(dayWebElement);
+		daySelect.selectByValue(day.toString());
 		
-		WebElement enterYear = driver.findElement(By.xpath("//select[@id='years']/option[@value='"+(year)+"']"));
-		enterYear.click();
+		Select monthSelect = new Select(monthWebElement);
+		monthSelect.selectByValue(month.toString());
+		
+		Select yearSelect = new Select(yearWebElement);
+		yearSelect.selectByValue(year.toString());
+		return this;
 	}
 	
-	public void enterCompany(String company) {
+	public AutomationPracticeSingUp enterCompany(String company) {
 		this.company.sendKeys(company);
+		return this;
 	}
 	
 	
-	public void enterAddress1(String address) {
+	public AutomationPracticeSingUp enterAddress1(String address) {
 		this.address1.sendKeys(address);
+		return this;
 	}
 	
-	public void enterAddress2(String address){
+	public AutomationPracticeSingUp enterAddress2(String address){
 		this.address2.sendKeys(address);
+		return this;
 	}
 	
-	public void enterCity(String city) {
+	public AutomationPracticeSingUp enterCity(String city) {
 		this.city.sendKeys(city);
+		return this;
 	}
 	
-	public void enterAddresState(String state) {
-		WebElement enterState = driver.findElement(By.xpath("//div/select[@id='id_state']/option[text()='"+state+"']"));
-		
-		enterState.click();
-				
+	public AutomationPracticeSingUp enterAddresState(String state) {		
+		Select stateSelect = new Select(stateWebElement);
+		stateSelect.selectByVisibleText(state);
+		return this;		
 	}
 	
-	public void enterPostalCode(Integer postalCode) {
+	public AutomationPracticeSingUp enterPostalCode(Integer postalCode) {
 		this.postalCode.sendKeys(postalCode.toString());
+		return this;
 	}
 	
-	public void selectCountry(){
+	public AutomationPracticeSingUp selectCountry(){
 		country.click();
+		return this;
 	}
 	
-	public void enterAnotherInfo(String otherInfo) {
+	public AutomationPracticeSingUp enterAnotherInfo(String otherInfo) {
 		this.otherInfo.sendKeys(otherInfo);
+		return this;
 	}
 	
-	public void enterHomePhone(Integer phone) {
+	public AutomationPracticeSingUp enterHomePhone(Integer phone) {
 		homePhone.sendKeys(phone.toString());
+		return this;
 	}
 	
-	public void enterMobilePhone(Integer mobilePhone) {
+	public AutomationPracticeSingUp enterMobilePhone(Integer mobilePhone) {
 		mobile.sendKeys(mobilePhone.toString());
+		return this;
 	}
 	
-	public void enterAlias(String alias) {
+	public AutomationPracticeSingUp enterAlias(String alias) {
 		this.alias.clear();
 		this.alias.sendKeys(alias);
+		return this;
 	}
 	
-	public void createAccount() {
+	public AutomationPracticeSingUp createAccount() {
 		this.createButton.click();
 		SeleniumUtils.waitElementVisibility(driver, userConfirm);
+		return this;
+	}
+	
+	public String assertNameAndLastName() {
+		SeleniumUtils.waitElementVisibility(driver, userConfirm);
+		return userConfirm.getText();
 	}
 }
