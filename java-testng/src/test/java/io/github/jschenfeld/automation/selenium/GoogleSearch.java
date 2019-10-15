@@ -2,7 +2,7 @@ package io.github.jschenfeld.automation.selenium;
 
 import org.testng.annotations.Test;
 
-import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageObject;
+import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaMobilePage;
 
 public class GoogleSearch extends AbstractUiTest {
 	
@@ -16,7 +16,7 @@ public class GoogleSearch extends AbstractUiTest {
 	@Test
 	public void busquedaEnGoogle() {
 
-		GoogleBusquedaPageObject googleBusquedaPage = new GoogleBusquedaPageObject(getDriver());
+		GoogleBusquedaMobilePage googleBusquedaPage = new GoogleBusquedaMobilePage(getDriver());
 		googleBusquedaPage.ingresarBusqueda("Informatorio Chaco");
 		googleBusquedaPage.clickBotonBuscar();
 		

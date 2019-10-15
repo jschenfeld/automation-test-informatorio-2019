@@ -21,7 +21,7 @@ public class SeleniumUtils {
 		return wait
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class)
-				.pollingEvery(Duration.ofMillis(200L))
+//				.pollingEvery(Duration.ofMillis(200L))
 				.until(ExpectedConditions.visibilityOf(element)) != null;
 	}
 	
@@ -30,7 +30,7 @@ public class SeleniumUtils {
 		return wait
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class)
-				.pollingEvery(Duration.ofMillis(200L))
+//				.pollingEvery(Duration.ofMillis(200L))
 				.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
@@ -39,7 +39,7 @@ public class SeleniumUtils {
 		return wait
 				.ignoring(StaleElementReferenceException.class)
 				.ignoring(NoSuchElementException.class)
-				.pollingEvery(Duration.ofMillis(200L))
+//				.pollingEvery(Duration.ofMillis(200L))
 				.until(ExpectedConditions.numberOfWindowsToBe(2)) != null;
 	}
 	

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageFactory;
-import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaPageObject;
+import io.github.jschenfeld.automation.selenium.pages.GoogleBusquedaMobilePage;
 import io.github.jschenfeld.automation.selenium.pages.GoogleResultadosPageFactory;
 
 public class MiPrimerTestDeUi {
@@ -30,7 +30,7 @@ public class MiPrimerTestDeUi {
 	public void busquedaEnGoogle() {
 		driver.get("https://www.google.com.ar");
 
-		GoogleBusquedaPageObject googleBusquedaPage = new GoogleBusquedaPageObject(driver);
+		GoogleBusquedaMobilePage googleBusquedaPage = new GoogleBusquedaMobilePage(driver);
 		googleBusquedaPage.ingresarBusqueda("Informatorio Chaco");
 		googleBusquedaPage.clickBotonBuscar();
 		

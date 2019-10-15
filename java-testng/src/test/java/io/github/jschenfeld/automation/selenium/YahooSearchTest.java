@@ -16,6 +16,7 @@ public class YahooSearchTest extends AbstractUiTest {
 	}
 	
 	
+	
 	@Test
 	public void searchResistencia() {
 		YahooHomePage homePage = new YahooHomePage(getDriver());

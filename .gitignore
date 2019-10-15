@@ -73,3 +73,8 @@ hs_err_pid*
 
 ### TestNG ###
 */test-output
+
+
+
+### Appium ###
+*/**/node_modules
