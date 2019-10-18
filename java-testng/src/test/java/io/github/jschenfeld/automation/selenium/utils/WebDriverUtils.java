@@ -110,8 +110,11 @@ public class WebDriverUtils {
 			@Override
 			public WebDriver build() {
 				System.out.println("Remote Chrome Mobile");
-
+				ChromeOptions options = new ChromeOptions();
+				options.setExperimentalOption("w3c", false);
 				DesiredCapabilities caps = DesiredCapabilities.chrome();
+				caps.setCapability(ChromeOptions.CAPABILITY, options);
+
 				caps.setPlatform(Platform.ANDROID);
 				caps.setCapability("platformName", Platform.ANDROID);
 				caps.setCapability("deviceName", "Galaxy Tab A (2016)");
