@@ -25,7 +25,7 @@ public class GoogleBusquedaMobilePage {
 	}
 	
 	public void clickBotonBuscar() {
-		botonBuscar.submit();
+		botonBuscar.click();
 	}
 	
 	private void initElements() {
