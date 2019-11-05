@@ -34,4 +34,14 @@ public class MenuWidget extends Widget {
 		agendaButton.click();
 		return new AgendaPage(getWrappedDriver());
 	}
+	
+	public FavoritePage openFavorite() {
+		favoriteButton.click();
+		return new FavoritePage(getWrappedDriver());
+	}
+	
+	public SearchPage openSearch() {
+		searchButton.click();
+		return new SearchPage(getWrappedDriver());
+	}
 }

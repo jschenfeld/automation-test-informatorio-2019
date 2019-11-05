@@ -6,7 +6,10 @@ import io.github.jschenfeld.automation.appium.pages.BaseScreen;
 
 public class HomePage extends BaseScreen {
 	
+	
+	
 	private MenuWidget menu;
+	private HeaderWidget header;
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -16,4 +19,10 @@ public class HomePage extends BaseScreen {
 	public MenuWidget getMenu() {
 		return menu;
 	}
+	
+	public HeaderWidget getHeader() {
+		return header;
+	}
+	
+
 }

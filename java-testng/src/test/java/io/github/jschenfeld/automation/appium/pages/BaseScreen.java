@@ -20,12 +20,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 //import io.appium.java_client.android.Connection;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.offset.PointOption;
 import io.github.jschenfeld.automation.appium.utils.NumberOfMobileElementsToBeMoreThan;
 
 /**
@@ -282,4 +284,11 @@ public abstract class BaseScreen {
 	protected void switchToNativeView() {
 		getDriver().context("NATIVE_APP");
 	}
+	
+	protected void swipe(PointOption el0, PointOption el1) {
+		TouchAction t = new TouchAction(getDriver());
+		t.longPress(el0).moveTo(el1).release().perform();
+	}
+	
+	
 }
