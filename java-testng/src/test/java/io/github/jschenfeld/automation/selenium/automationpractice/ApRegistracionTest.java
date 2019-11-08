@@ -1,5 +1,6 @@
 package io.github.jschenfeld.automation.selenium.automationpractice;
 
+import org.openqa.selenium.support.Color;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -18,9 +19,13 @@ public class ApRegistracionTest extends AbstractUiTest {
 	public void invalidEmail(String email) {
 		ApAuthentication authPage = new ApAuthentication(getDriver());
 		authPage.emailAddressCreate(email);
-		String color = authPage.getEmailCreateColor();
+		
+		String stringColor = authPage.getEmailCreateColor();
+		Color expectedColor = new Color(241, 51, 64, 1);
+		Color actualColor = Color.fromString(stringColor);
+		
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(color, "rgba(241, 51, 64, 1)");
+		soft.assertEquals(actualColor,  expectedColor);
 		authPage.clickCreate();
 		soft.assertEquals(authPage.getCreateAccountError(), 
 				"Invalid email address.");
