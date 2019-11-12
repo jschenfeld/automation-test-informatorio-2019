@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Plan 5" verbose="1" >
+    
+  <test name="Jugando con DropDown">
+	<classes>
+       <class name="io.github.jschenfeld.automation.selenium.TheInternetTest" />
+    </classes>
+  </test>
+
+</suite>
