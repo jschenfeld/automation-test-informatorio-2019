@@ -17,6 +17,7 @@ public abstract class AbstractUiTest {
 	public void inicializarBrowser(@Optional(value = "CHROME_MOBILE_ANDROID") String browser) {
 		System.out.println("browser " + browser);
 		driver = Driver.valueOf(browser).build();
+		driver.manage().window().maximize();
 		driver.get(getBaseUrl());
 	}
 	

@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Plan integrador Rodrigo" verbose="1" >
+  
+  <test name="punto 1.a">
+	<classes>
+       <class name="com.rodrigo.integrador.test.RegistroTest" >
+	       <methods>
+				<include name="verificarMjeErrorTest" />
+			</methods>
+       </class>
+    </classes>
+  </test>
+  
+  <test name="punto 1.b">
+	<classes>
+       <class name="com.rodrigo.integrador.test.RegistroTest" >
+	       <methods>
+				<include name="RegistroCompletoTest" />
+			</methods>
+       </class>
+    </classes>
+  </test>
+  
+  <test name="punto 2.a">
+	<classes>
+       <class name="com.rodrigo.integrador.test.LoginTest" >
+	       <methods>
+				<include name="credencialesValidasTest" />
+			</methods>
+       </class>
+    </classes>
+  </test>
+  
+  <test name="punto 2.b">
+	<classes>
+       <class name="com.rodrigo.integrador.test.LoginTest" >
+	       <methods>
+				<include name="credencialesNoValidasTest" />
+			</methods>
+       </class>
+    </classes>
+  </test>
+</suite>
