@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite Emanuel Ruidiaz" verbose="1">
+	<test name="Primer Ejercicio">
+		
+		<classes><class name="emanuelRuidiaz.test.ErrorMessageRegisterTest"></class></classes></test>
+	<test name="Segundo Ejercicio">
+		
+		<classes><class name="emanuelRuidiaz.test.RegisterUserTest"></class></classes></test>
+	<test name="Tercer Ejercicio">
+		
+		<classes><class name="emanuelRuidiaz.test.SignInTest"></class></classes></test></suite>
